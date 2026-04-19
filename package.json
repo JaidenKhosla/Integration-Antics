@@ -1,12 +1,17 @@
 {
   "name": "calculusproject",
+  "homepage": "https://JaidenKhosla.github.io/Integration-Antics",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "start-prod": "next start",
+    "out" : "next build && node -e \"require('fs').writeFileSync('./out/.nojekyll', '')\"",
+    "predeploy" : "pnpm run out",
+    "deploy" : "pnpm run predeploy && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -25,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

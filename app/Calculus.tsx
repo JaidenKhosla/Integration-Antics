@@ -16,7 +16,7 @@ export function Volume({ points, scaleFactor } : VolumeProps){
 
     const context = useContext(getContext());
 
-    const segments = Math.max(3, Math.round(context!.useN/10000 * 32));
+    const segments = 50;
 
     const [ useInterior ] = useState<number>(0xffffff * Math.random());
     const [ useExterior ] = useState<number>(0xffffff * Math.random());
